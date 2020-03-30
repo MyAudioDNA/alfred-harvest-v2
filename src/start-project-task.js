@@ -7,7 +7,8 @@ const vars = process.env;
 const { projectId, projectName, taskId, taskName } = vars;
 
 const today = getToday();
-const url = `https://api.harvestapp.com/v2/time_entries?project_id=${projectId}&task_id=${taskId}&spent_date=${today}`;
+const note = encodeURIComponent(`${process.argv[2]}`);
+const url = `https://api.harvestapp.com/v2/time_entries?project_id=${projectId}&task_id=${taskId}&spent_date=${today}&notes=${note}`;
 
 
 
